@@ -2,8 +2,8 @@ import WeatherIcon from "./weatherIcon";
 import styles from "../page.module.css";
 
 export default function WeatherCard({ city, currentTemp, highTemp, lowTemp, cloudiness, humidity, windSpeed, weatherType }){
-    const cloudinessPercentage = 99 - cloudiness;
-	const background = `radial-gradient(lightblue, ${cloudinessPercentage}%, grey)`;
+    const cloudinessPercentage = 98 - cloudiness;
+	const background = `linear-gradient(lightblue, ${cloudinessPercentage}%, grey)`;
     return (
 		<div style={{ background }}>
 			<div className={styles.main}>
