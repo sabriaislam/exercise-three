@@ -8,24 +8,22 @@ export default async function City({params}) {
   
     const request = await fetch(queryURL);
     const weatherData = await request.json();
-  
-    console.log(weatherData);
-    
+      
     return ( 
     <div className={styles.page}>
         <Header />
         <main className={styles.main}>
-        <h1>Weather App</h1>
-        <WeatherCard city={weatherData.name} 
-            currentTemp ={weatherData.main.temp} 
-            highTemp={weatherData.main.temp_max} 
-            lowTemp ={weatherData.main.temp_min} 
-            cloudiness={weatherData.clouds.all} 
-            humidity ={weatherData.main.humidity} 
-            windspeed={weatherData.wind.speed}
-            weatherType = {weatherData.weather[0].main}
-            />
-      </main>
+            <h1 className={styles.title}h1>Weather App</h1>
+            <WeatherCard city={weatherData.name} 
+                currentTemp ={weatherData.main.temp} 
+                highTemp={weatherData.main.temp_max} 
+                lowTemp ={weatherData.main.temp_min} 
+                cloudiness={weatherData.clouds.all} 
+                humidity ={weatherData.main.humidity} 
+                windspeed={weatherData.wind.speed}
+                weatherType = {weatherData.weather[0].main}
+                />
+        </main>
     </div>
     )
 }
